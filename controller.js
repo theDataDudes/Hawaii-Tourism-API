@@ -1,10 +1,11 @@
 var Joi = require('joi');
 var Boom = require('boom');
+var AnnualFlights = require('./model').AnnualFlights;
 
 //config for the route that retrieves all db data
 exports.getAll = {
   handler : function (req, rep) {
-    annualflights.find({}, function (err, flight) {
+    AnnualFlights.find({}, function (err, flight) {
       if (!err) {
         rep(flight);
       } else {
