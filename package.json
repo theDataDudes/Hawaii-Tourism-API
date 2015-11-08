@@ -9,7 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "boom": "^3.0.0",
     "hapi": "^11.1.0",
+    "joi": "^7.0.0",
     "mongodb": "^2.0.48",
     "mongoose": "^4.2.4"
   }
