@@ -1,8 +1,9 @@
 var Mongoose = require('mongoose');
 var Schema = Mongoose.Schema;
 
+//need to redefine this schema
 var AnnualSchema = new Schema({
-  JAPAN : {
+  '2008-JAPAN' : {
     type : String
   },
   created : {
@@ -10,8 +11,16 @@ var AnnualSchema = new Schema({
     default : Date.now
   }
 })
+
+//models for each collection
 var annualflights = Mongoose.model('annualflight', AnnualSchema);
 
+var dailyflights = Mongoose.model('dailyflight', AnnualSchema);
+
+var expenditures = Mongoose.model('expenditure', AnnualSchema);
+
 module.exports = {
-  AnnualFlights : annualflights
+  AnnualFlights : annualflights,
+  DailyFlights : dailyflights,
+  Expenditures : expenditures
 };
