@@ -1,6 +1,10 @@
 var Mongoose = require('mongoose');
 var Schema = Mongoose.Schema;
 
+var AnnualSchema = new Schema({
+ JAPAN : String
+});
+
 //models for each collection
 var annualflights = Mongoose.model('annualflight', AnnualSchema);
 
