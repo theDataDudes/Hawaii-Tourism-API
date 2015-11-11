@@ -12,8 +12,11 @@ var dailyflights = Mongoose.model('dailyflight', AnnualSchema);
 
 var expenditures = Mongoose.model('expenditure', AnnualSchema);
 
+var avgstay = Mongoose.model('avgstay', AnnualSchema);
+
 module.exports = {
   AnnualFlights : annualflights,
   DailyFlights : dailyflights,
-  Expenditures : expenditures
+  Expenditures : expenditures,
+  AvgStay : avgstay
 };

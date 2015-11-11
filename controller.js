@@ -3,6 +3,7 @@ var Boom = require('boom');
 var AnnualFlights = require('./model').AnnualFlights;
 var DailyFlights = require('./model').DailyFlights;
 var Expenditures = require('./model').Expenditures;
+var AvgStay = require('./model').AvgStay;
 
 //config for the route that retrieves annualflights collection
 exports.getAnnual = {
@@ -42,6 +43,20 @@ exports.getExpenditures = {
     });
   }
 };
+
+//config for the route that retrieves avgStay collection
+exports.getAvgStay = {
+  handler : function (req, rep) {
+    AvgStay.find({}, function (err, avgstay) {
+      if (!err) {
+        rep(avgstay);
+      } else {
+        rep(Boom.badImplementation(err)); //500 error
+      }
+    });
+  }
+};
+
 
 //future config function that allows user to add to db
 // exports.add = {
