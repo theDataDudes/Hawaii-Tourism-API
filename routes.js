@@ -8,6 +8,8 @@ exports.endpoints = [
 
   { method : 'GET', path : '/expenditures', config : Controller.getExpenditures },
 
-  { method : 'GET', path : '/avgStay', config : Controller.getAvgStay }
+  { method : 'GET', path : '/avgStay', config : Controller.getAvgStay },
+
+  { method : 'GET', path : '/hawaiivisitors', config : Controller.getHawaiiVisitors}
 ];
 
