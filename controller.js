@@ -3,6 +3,8 @@ var Boom = require('boom');
 var AnnualFlights = require('./model').AnnualFlights;
 var DailyFlights = require('./model').DailyFlights;
 var Expenditures = require('./model').Expenditures;
+var AvgStay = require('./model').AvgStay;
+var HawaiiVisitors = require('./model').HawaiiVisitors;
 
 //config for the route that retrieves annualflights collection
 exports.getAnnual = {
@@ -36,6 +38,32 @@ exports.getExpenditures = {
     Expenditures.find({}, function (err, expenditures) {
       if (!err) {
         rep(expenditures);
+      } else {
+        rep(Boom.badImplementation(err)); //500 error
+      }
+    });
+  }
+};
+
+//config for the route that retrieves avgStay collection
+exports.getAvgStay = {
+  handler : function (req, rep) {
+    AvgStay.find({}, function (err, avgstay) {
+      if (!err) {
+        rep(avgstay);
+      } else {
+        rep(Boom.badImplementation(err)); //500 error
+      }
+    });
+  }
+};
+
+//config for the route that retrievs all hawaiivisitor collection
+exports.getHawaiiVisitors = {
+  handler : function (req, rep) {
+    HawaiiVisitors.find({}, function (err, data) {
+      if (!err) {
+        rep(data);
       } else {
         rep(Boom.badImplementation(err)); //500 error
       }
